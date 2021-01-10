@@ -1,0 +1,18 @@
+
+Randomizer(Mersenne)
+
+X | O | X
+- + - + -
+O | X | O
+- + - + -
+X | O | X
+
+Enum(Board Places)
+
+Win Checking
+
+Menu(1P / 2P)
+
+User Input / Output
+
+2D Array (Board)
