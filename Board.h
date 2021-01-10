@@ -1,15 +1,21 @@
 #pragma once
 #include <array>
+#include <iostream>
 
 class Board
 {
 private:
-	std::array<std::array<char, 3>, 3> board;
+	std::array<char,9> board;
 	
 public:
 	Board();
 
-	void changeSquare(int row, int col, bool isX);
+	void changeSquare(int numPos, bool isX);
+
+	void print();
+
+private:
+	std::array<int, 2> getPos(int num);
 
 	
 	
