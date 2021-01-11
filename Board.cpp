@@ -1,5 +1,8 @@
 ﻿#include "Board.h"
 
+#define X 'X'
+#define O 'O'
+
 Board::Board()
 {
 	board = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
@@ -19,11 +22,104 @@ void Board::changeSquare(int numPos, bool isX)
 
 void Board::print()
 {
-	std::cout << board[0] << '|' << board[1] << '|' << board[2] << '\n';
-	std::cout << "-+-+-\n";
-	std::cout << board[3] << '|' << board[4] << '|' << board[5] << '\n';
-	std::cout << "-+-+-\n";
-	std::cout << board[6] << '|' << board[7] << '|' << board[8] << '\n';
+	for (int i = 0; i < 9; i += 3)
+	{
+		bool x1 = board[i] == 'X' ? true : false;
+		bool o1 = board[i] == 'O' ? true : false;
+		bool no1 = !(o1 || x1);
+		bool x2 = board[i + 1] == 'X' ? true : false;
+		bool o2 = board[i + 1] == 'O' ? true : false;
+		bool no2 = !(o2 || x2);
+		bool x3 = board[i + 2] == 'X' ? true : false;
+		bool o3 = board[i + 2] == 'O' ? true : false;
+		bool no3 = !(o3 || x3);
+
+		std::cout << "                    ||                    ||                    \n";
+
+		if (x1) { std::cout << "     @@@    @@@     ";}
+		else if (o1) { std::cout << "      @@@@@@@@@     "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x2) { std::cout << "     @@@    @@@     "; }
+		else if (o2) { std::cout << "      @@@@@@@@@     "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x3) { std::cout << "     @@@    @@@     \n"; }
+		else if (o3) { std::cout << "      @@@@@@@@@     \n"; }
+		else { std::cout << "                    \n"; }
+
+		if (x1) { std::cout << "       @@@@@@       "; }
+		else if (o1) { std::cout << "    @@@       @@@   "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x2) { std::cout << "       @@@@@@       "; }
+		else if (o2) { std::cout << "    @@@       @@@   "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x3) { std::cout << "       @@@@@@       \n"; }
+		else if (o3) { std::cout << "    @@@       @@@   \n"; }
+		else { std::cout << "                    \n"; }
+
+		if (x1) { std::cout << "         @@         "; }
+		else if (o1) { std::cout << "    @@@       @@@   "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x2) { std::cout << "         @@         "; }
+		else if (o2) { std::cout << "    @@@       @@@   "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x3) { std::cout << "         @@         \n"; }
+		else if (o3) { std::cout << "    @@@       @@@   \n"; }
+		else { std::cout << "                    \n"; }
+
+		if (x1) { std::cout << "       @@@@@@       "; }
+		else if (o1) { std::cout << "    @@@       @@@   "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x2) { std::cout << "       @@@@@@       "; }
+		else if (o2) { std::cout << "    @@@       @@@   "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x3) { std::cout << "       @@@@@@       \n"; }
+		else if (o3) { std::cout << "    @@@       @@@   \n"; }
+		else { std::cout << "                    \n"; }
+
+		if (x1) { std::cout << "     @@@    @@@     "; }
+		else if (o1) { std::cout << "      @@@@@@@@@     "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x2) { std::cout << "     @@@    @@@     "; }
+		else if (o2) { std::cout << "      @@@@@@@@@     "; }
+		else { std::cout << "                    "; }
+		std::cout << "||";
+		if (x3) { std::cout << "     @@@    @@@     \n"; }
+		else if (o3) { std::cout << "      @@@@@@@@@     \n"; }
+		else { std::cout << "                    \n"; }
+
+		std::cout << "                    ||                    ||                    \n";
+		std::cout << "                    ||                    ||                    \n";
+		if (i == 6) { break; }
+		std::cout << "====================++====================++====================\n";
+
+	}
+	
+
+}
+
+char Board::getSquare(int pos)
+{
+	return board[pos-1];
+}
+
+char Board::checkWin()
+{
+	for (int i = 0; i < 9; i++)
+	{
+		if (board[i] % 3 == 0 && board[i] == X)
+		{
+
+		}
+	}
 }
 
 std::array<int, 2> Board::getPos(int num)

@@ -14,6 +14,10 @@ public:
 
 	void print();
 
+	char getSquare(int pos);
+
+	char checkWin();
+
 private:
 	std::array<int, 2> getPos(int num);
 
